@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
+/*
+*Use the intern method in this class instead of String.intern() to reduce permgen memory pressure.
+*/
 public class LockUtil {
     private static final ConcurrentMap<String, Holder> locks = new ConcurrentHashMap<String, Holder>();
     protected static final int HIGH_WATER_MARK = 100*1000;
